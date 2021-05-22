@@ -105,7 +105,7 @@
       $.ajax({
         type: "GET",
         //YOUR TURN: Replace with csv export link
-        url: 'https://docs.google.com/spreadsheets/d/1ux08BwCBZTTkERVqb33Fv9rBsbp0CSPPzPl3QKM_ySQ/gviz/tq?tqx=out:csv&sheet=Sheet1',
+        url: 'https://docs.google.com/spreadsheets/d/1bkR9X8Ji9XUQWa69N00Xphj6_E-KKek5OEYDMzGAPBY/gviz/tq?tqx=out:csv&sheet=Sheet1',
         dataType: "text",
         success: function (csvData) { makeGeoJSON(csvData); }
       });
@@ -114,8 +114,8 @@
 
       function makeGeoJSON(csvData) {
         csv2geojson.csv2geojson(csvData, {
-          latfield: 'Lat',
-          lonfield: 'Long',
+          latfield: 'Latitude',
+          lonfield: 'Longitude',
           delimiter: ','
         }, function (err, data) {
           map.on('load', function () {
