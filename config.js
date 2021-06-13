@@ -9,7 +9,7 @@ const config = {
   description:
     "Everything in your neighbourhood in one place!",
   sideBarInfo: ["ShopName", "Address", "Phone", "Tags"],
-  popupInfo: ["Tags"],
+  popupInfo: ["Description"],
   filters: [
     {
       type: "dropdown",
