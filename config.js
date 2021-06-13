@@ -4,12 +4,12 @@ const config = {
     "pk.eyJ1IjoiZ3RtcHJrc2hyYiIsImEiOiJjamZ0bXBqZnMxd3E5MnduejVjdGpuN2R4In0.vvrRpEdZWNwaKUO6vmgRHw",
   CSV: "https://docs.google.com/spreadsheets/d/1_tWT0M4g4Mv2M0Q9_HCeBojVMDYN04w_x5eNkYwmsO0/gviz/tq?tqx=out:csv&sheet=Bagalkot",
   center: [77.3507442, 12.95384778],
-  zoom: 6,
+  zoom: 10,
   title: "Neighbourhood Dashboard",
   description:
     "Everything in your neighbourhood in one place!",
   sideBarInfo: ["ShopName", "Pincode", "Description", "Tags"],
-  popupInfo: ["Description"],
+  popupInfo: ["Tags"],
   filters: [
     {
       type: "dropdown",
