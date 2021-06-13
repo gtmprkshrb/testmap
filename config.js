@@ -8,7 +8,7 @@ const config = {
   title: "Neighbourhood Dashboard",
   description:
     "Everything in your neighbourhood in one place!",
-  sideBarInfo: ["ShopName", "Address", "Phone", "Tags"],
+  sideBarInfo: ["ShopName", "Pincode", "Description", "Tags"],
   popupInfo: ["Description"],
   filters: [
     {
