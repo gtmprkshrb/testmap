@@ -27,14 +27,15 @@ const config = {
       title: "Category: ",
       columnHeader: "Category",
       listItems: [
-        "Medical Services"
+        "Medical Services",
+        "Population"
       ],
     },
     {
       type: "checkbox",
       title: "Tags: ",
       columnHeader: "Tags", // Case sensitive - must match spreadsheet entry
-      listItems: ["Vaccination"], // Case sensitive - must match spreadsheet entry; This will take up to six inputs but is best used with a maximum of three;
+      listItems: ["Vaccination", "Need Vaccination", "Maarga", "Global Concerns India"], // Case sensitive - must match spreadsheet entry; This will take up to six inputs but is best used with a maximum of three;
     },
     {
       type: "dropdown",
