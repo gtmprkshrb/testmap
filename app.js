@@ -471,7 +471,7 @@ map.on("load", function () {
         color1data["features"] = color1data["features"].filter((color1data) => color1data["properties"].Category == "Govt Service");
         console.log(color1data);
 
-        geojsonData = data;
+        // geojsonData = data;
         
         color2data=JSON.parse(JSON.stringify(data));
         color2data["features"] = color2data["features"].filter((color2data)=> color2data["properties"].Category == "Local Elected Rep");
@@ -485,7 +485,8 @@ map.on("load", function () {
         filterData["features"] = filterData["features"].filter((filterData) => filterData["properties"].SubCategory === "filterData");
         console.log(filterData);
         
-        
+        geojsonData = data;
+
         geojsonColor1Data=color1data;
         geojsonColor2Data=color2data;
         geojsonColor3Data=color3data;
