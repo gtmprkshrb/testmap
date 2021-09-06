@@ -479,7 +479,7 @@ map.on("load", function () {
 
         color3data=JSON.parse(JSON.stringify(data));
         color3data["features"] = color3data["features"].filter((color3data)=> color3data["properties"].Category == "Environment-Civic Data");
-        console.log(color2data);
+        console.log(color3data);
 
         filterData=JSON.parse(JSON.stringify(data));
         filterData["features"] = filterData["features"].filter((filterData) => filterData["properties"].SubCategory === "filterData");
@@ -534,7 +534,7 @@ map.on("load", function () {
           },
           paint: {
             "circle-radius": 5, // size of circles
-            "circle-color": "black", // color of circles
+            "circle-color": "blue", // color of circles
             "circle-stroke-color": "white",
             "circle-stroke-width": 1,
             "circle-opacity": 0.7,
