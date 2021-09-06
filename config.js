@@ -8,7 +8,7 @@ const config = {
   title: "City Dashboard",
   description:
     "Everything in your neighbourhood in one place for the city of Bengaluru!",
-  sideBarInfo: ["ShopName", "Pincode", "Description", "Tags"],
+  sideBarInfo: ["ShopName", "Description", "Phone"],
   popupInfo: ["ShopName"],
   filters: [
     
@@ -17,9 +17,9 @@ const config = {
       title: "Category: ",
       columnHeader: "Category",
       listItems: [
-        "Local Governance",
-        "Help Locations",
-        "Citizen Initiatives"
+        "Local Elected Rep",
+        "Govt Services",
+        "Environment-Civic Data"
       ],
     },
     {
@@ -29,13 +29,13 @@ const config = {
       listItems: [
         "Corporators",
         "MLA",
-        "Waste - BioMethanisationUnit",
-        "Waste - DryWasteCollectionCentre",
         "Waste",
         "Citizen Services",
         "Electricity",
         "Campaigns",
-        "Issue Reported"
+        "Issue Reported",
+        "PHCs",
+        "Volunteers"
       ],
     }
     // {
