@@ -3,6 +3,11 @@ mapboxgl.accessToken = config.accessToken;
 const columnHeaders = config.sideBarInfo;
 
 let geojsonData = {};
+let geojsonColor1Data = {};
+let geojsonColor2Data = {};
+let filterData = {};
+
+
 const filteredGeojson = {
   type: "FeatureCollection",
   features: [],
@@ -33,11 +38,11 @@ function createPopup(currentFeature) {
     .addTo(map);
 }
 
-function buildLocationList(locationData) {
+function buildLocationList(locationData1) {
   /* Add a new listing section to the sidebar. */
   const listings = document.getElementById("listings");
   listings.innerHTML = "";
-  locationData.features.forEach(function (location, i) {
+  locationData1.features.forEach(function (location, i) {
     const prop = location.properties;
 
     const listing = listings.appendChild(document.createElement("div"));
@@ -134,6 +139,17 @@ function buildDropDownList(title, listItems) {
   }
   filtersDiv.appendChild(mainDiv);
 }
+
+//geojsondata -> data -> data1+data2
+
+//data1 - decides color - HTMLID
+//data2 - decides color - HTMLID
+
+//Evrytime a filter is selected it acts on only the geojson data and one html id
+
+
+
+
 
 // Build checkbox function
 // title - the name or 'category' of the selection e.g. 'Languages: '
@@ -314,7 +330,9 @@ function applyFilters() {
       });
     }
 
-    map.getSource("locationData").setData(filteredGeojson);
+    map.getSource("locationData1").setData(filteredGeojson);
+    //addData
+    map.getSource("locationData2").setData(filterData);
     buildLocationList(filteredGeojson);
   });
 }
@@ -345,7 +363,10 @@ function removeFilters() {
     option.selectedIndex = 0;
   });
 
-  map.getSource("locationData").setData(geojsonData);
+  map.getSource("locationData1").setData(geojsonColor1Data);
+  
+  map.getSource("locationData2").setData(geojsonColor2Data);
+
   buildLocationList(geojsonData);
 }
 
@@ -406,6 +427,7 @@ geocoder.on("result", function (ev) {
 });
 
 map.on("load", function () {
+
   map.addControl(geocoder, "top-right");
 
   // csv2geojson - following the Sheet Mapper tutorial https://www.mapbox.com/impact-tools/sheet-mapper
@@ -440,29 +462,71 @@ map.on("load", function () {
           data.properties.id = i;
         });
 
+        
+
+        console.log(data);
+
+        let color1data=JSON.parse(JSON.stringify(data));
+        color1data["features"] = color1data["features"].filter((color1data) => color1data["properties"].Category == "Help Locations");
+        console.log(color1data);
+
         geojsonData = data;
-        // Add the the layer to the map
+        
+        color2data=JSON.parse(JSON.stringify(data));
+        color2data["features"] = color2data["features"].filter((color2data)=> color2data["properties"].Category == "Local Governance");
+        console.log(color2data);
+
+
+        filterData=JSON.parse(JSON.stringify(data));
+        filterData["features"] = filterData["features"].filter((filterData) => filterData["properties"].SubCategory === "filterData");
+        console.log(filterData);
+        
+        
+        geojsonColor1Data=color1data;
+        geojsonColor2Data=color2data;
+
+
+        //Add the the layer to the map
         map.addLayer({
-          id: "locationData",
+          id: "locationData1",
           type: "circle",
           source: {
             type: "geojson",
-            data: geojsonData,
+            data: color1data,
           },
           paint: {
             "circle-radius": 5, // size of circles
-            "circle-color": "#3D2E5D", // color of circles
+            "circle-color": "green", // color of circles
             "circle-stroke-color": "white",
             "circle-stroke-width": 1,
             "circle-opacity": 0.7,
           },
         });
+      
+
+        map.addLayer({
+          id: "locationData2",
+          type: "circle",
+          source: {
+            type: "geojson",
+            data: color2data,
+          },
+          paint: {
+            "circle-radius": 5, // size of circles
+            "circle-color": "orange", // color of circles
+            "circle-stroke-color": "white",
+            "circle-stroke-width": 1,
+            "circle-opacity": 0.7,
+          },
+        });
+
+
       }
     );
 
-    map.on("click", "locationData", function (e) {
+    map.on("click", "locationData1", function (e) {
       const features = map.queryRenderedFeatures(e.point, {
-        layers: ["locationData"],
+        layers: ["locationData1"],
       });
       const clickedPoint = features[0].geometry.coordinates;
       flyToLocation(clickedPoint);
@@ -470,11 +534,11 @@ map.on("load", function () {
       createPopup(features[0]);
     });
 
-    map.on("mouseenter", "locationData", function () {
+    map.on("mouseenter", "locationData1", function () {
       map.getCanvas().style.cursor = "pointer";
     });
 
-    map.on("mouseleave", "locationData", function () {
+    map.on("mouseleave", "locationData1", function () {
       map.getCanvas().style.cursor = "";
     });
     buildLocationList(geojsonData);
