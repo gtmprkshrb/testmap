@@ -5,6 +5,7 @@ const columnHeaders = config.sideBarInfo;
 let geojsonData = {};
 let geojsonColor1Data = {};
 let geojsonColor2Data = {};
+let geojsonColor3Data = {};
 let filterData = {};
 
 
@@ -467,15 +468,18 @@ map.on("load", function () {
         console.log(data);
 
         let color1data=JSON.parse(JSON.stringify(data));
-        color1data["features"] = color1data["features"].filter((color1data) => color1data["properties"].Category == "Help Locations");
+        color1data["features"] = color1data["features"].filter((color1data) => color1data["properties"].Category == "Govt Service");
         console.log(color1data);
 
         geojsonData = data;
         
         color2data=JSON.parse(JSON.stringify(data));
-        color2data["features"] = color2data["features"].filter((color2data)=> color2data["properties"].Category == "Local Governance");
+        color2data["features"] = color2data["features"].filter((color2data)=> color2data["properties"].Category == "Local Elected Rep");
         console.log(color2data);
 
+        color3data=JSON.parse(JSON.stringify(data));
+        color3data["features"] = color3data["features"].filter((color3data)=> color3data["properties"].Category == "Environment-Civic Data");
+        console.log(color2data);
 
         filterData=JSON.parse(JSON.stringify(data));
         filterData["features"] = filterData["features"].filter((filterData) => filterData["properties"].SubCategory === "filterData");
@@ -484,6 +488,7 @@ map.on("load", function () {
         
         geojsonColor1Data=color1data;
         geojsonColor2Data=color2data;
+        geojsonColor3Data=color3data;
 
 
         //Add the the layer to the map
@@ -520,6 +525,22 @@ map.on("load", function () {
           },
         });
 
+        map.addLayer({
+          id: "locationData3",
+          type: "circle",
+          source: {
+            type: "geojson",
+            data: color3data,
+          },
+          paint: {
+            "circle-radius": 5, // size of circles
+            "circle-color": "black", // color of circles
+            "circle-stroke-color": "white",
+            "circle-stroke-width": 1,
+            "circle-opacity": 0.7,
+          },
+        });
+
 
       }
     );
@@ -534,11 +555,47 @@ map.on("load", function () {
       createPopup(features[0]);
     });
 
+    map.on("click", "locationData2", function (e) {
+      const features = map.queryRenderedFeatures(e.point, {
+        layers: ["locationData2"],
+      });
+      const clickedPoint = features[0].geometry.coordinates;
+      flyToLocation(clickedPoint);
+      sortByDistance(clickedPoint);
+      createPopup(features[0]);
+    });
+
+    map.on("click", "locationData3", function (e) {
+      const features = map.queryRenderedFeatures(e.point, {
+        layers: ["locationData3"],
+      });
+      const clickedPoint = features[0].geometry.coordinates;
+      flyToLocation(clickedPoint);
+      sortByDistance(clickedPoint);
+      createPopup(features[0]);
+    });
+
     map.on("mouseenter", "locationData1", function () {
       map.getCanvas().style.cursor = "pointer";
     });
 
+    map.on("mouseenter", "locationData2", function () {
+      map.getCanvas().style.cursor = "pointer";
+    });
+
+    map.on("mouseenter", "locationData3", function () {
+      map.getCanvas().style.cursor = "pointer";
+    });
+
     map.on("mouseleave", "locationData1", function () {
+      map.getCanvas().style.cursor = "";
+    });
+
+    map.on("mouseleave", "locationData2", function () {
+      map.getCanvas().style.cursor = "";
+    });
+
+    map.on("mouseleave", "locationData3", function () {
       map.getCanvas().style.cursor = "";
     });
     buildLocationList(geojsonData);
