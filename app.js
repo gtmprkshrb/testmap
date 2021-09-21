@@ -365,7 +365,7 @@ function removeFilters() {
   });
 
   map.getSource("locationData1").setData(geojsonColor1Data);
-  
+
   map.getSource("locationData2").setData(geojsonColor2Data);
   //map.getSource("locationData3").setData(geojsonColor3Data);
 
@@ -464,31 +464,38 @@ map.on("load", function () {
           data.properties.id = i;
         });
 
-        
+
 
         console.log(data);
 
-        let color1data=JSON.parse(JSON.stringify(data));
+        let color1data = JSON.parse(JSON.stringify(data));
         color1data["features"] = color1data["features"].filter((color1data) => color1data["properties"].Category == "Govt Services");
+        color1data["features"] = color1data["features"].filter((color1data) => color1data["properties"].Category == "Help Locations");
         console.log(color1data);
 
         geojsonData = data;
-        
-        color2data=JSON.parse(JSON.stringify(data));
-        color2data["features"] = color2data["features"].filter((color2data)=> color2data["properties"].Category == "Environment-Civic Data");
+
+        color2data = JSON.parse(JSON.stringify(data));
+        color2data["features"] = color2data["features"].filter((color2data) => color2data["properties"].Category == "Environment-Civic Data");
         console.log(color2data);
 
         // color3data=JSON.parse(JSON.stringify(data));
         // color3data["features"] = color3data["features"].filter((color3data)=> color3data["properties"].Category == "Govt Services");
         // console.log(color2data);
 
-        filterData=JSON.parse(JSON.stringify(data));
+        filterData = JSON.parse(JSON.stringify(data));
         filterData["features"] = filterData["features"].filter((filterData) => filterData["properties"].Category === "filterData");
+        color2data["features"] = color2data["features"].filter((color2data) => color2data["properties"].Category == "Local Governance");
+        console.log(color2data);
+
+
+        filterData = JSON.parse(JSON.stringify(data));
+        filterData["features"] = filterData["features"].filter((filterData) => filterData["properties"].SubCategory === "filterData");
         console.log(filterData);
-        
-        
-        geojsonColor1Data=color1data;
-        geojsonColor2Data=color2data;
+
+
+        geojsonColor1Data = color1data;
+        geojsonColor2Data = color2data;
         //geojsonColor3Data=color3data;
 
 
@@ -508,7 +515,7 @@ map.on("load", function () {
             "circle-opacity": 0.7,
           },
         });
-      
+
 
         map.addLayer({
           id: "locationData2",
@@ -578,6 +585,9 @@ map.on("load", function () {
     });
 
     map.on("mouseleave", "locationData2", function () {
+      map.getCanvas().style.cursor = "";
+    });
+    map.on("mouseleave", "locationData1", function () {
       map.getCanvas().style.cursor = "";
     });
     buildLocationList(geojsonData);
