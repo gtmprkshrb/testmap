@@ -11,42 +11,42 @@ const config = {
   sideBarInfo: ["ShopName", "Pincode", "Description", "Tags"],
   popupInfo: ["ShopName"],
   filters: [
-    zoom: 12,
-    title: "City Dashboard",
-    description:
-    "Everything in your neighbourhood in one place for the city of Bengaluru!",
-    sideBarInfo: ["ShopName", "Pincode", "Description", "Tags"],
-    popupInfo: ["ShopName"],
-    filters: [
-
-      {
-        type: "dropdown",
-        title: "Category: ",
-        columnHeader: "Category",
-        listItems: [
-          "Govt Services",
-          "Environment-Civic Data"
-        ],
-      },
-      {
-        type: "dropdown",
-        title: "Sub Category: ",
-        columnHeader: "SubCategory",
-        listItems: [
-          "Others",
-          "Defence Hospitals",
-          "SDH/CHC",
-          "Corporators",
-          "MLA",
-          "Waste",
-          "Citizen Services",
-          "Electricity",
-          "Campaigns",
-          "Issue Reported",
-          "PHCs",
-          "Volunteers",
-          "AQM"
-        ],
-      }
-    ],
-};
+    {
+      zoom: 12,
+      title: "City Dashboard",
+      description:
+        "Everything in your neighbourhood in one place for the city of Bengaluru!",
+      sideBarInfo: ["ShopName", "Pincode", "Description", "Tags"],
+      popupInfo: ["ShopName"],
+      filters: [
+        {
+          type: "dropdown",
+          title: "Category: ",
+          columnHeader: "Category",
+          listItems: [
+            "Govt Services",
+            "Environment-Civic Data"
+          ],
+        },
+        {
+          type: "dropdown",
+          title: "Sub Category: ",
+          columnHeader: "SubCategory",
+          listItems: [
+            "Others",
+            "Defence Hospitals",
+            "SDH/CHC",
+            "Corporators",
+            "MLA",
+            "Waste",
+            "Citizen Services",
+            "Electricity",
+            "Campaigns",
+            "Issue Reported",
+            "PHCs",
+            "Volunteers",
+            "AQM"
+          ],
+        }
+      ],
+    };
