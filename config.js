@@ -5,14 +5,6 @@ const config = {
   CSV: "https://docs.google.com/spreadsheets/d/1NWpae4UxuLyMKLVzD-O4QSvgoA1DUbMzcNVE6pIrBmY/gviz/tq?tqx=out:csv&sheet=Bagalkot",
   center: [77.5905634, 12.9244925],
   zoom: 10,
-<<<<<<< HEAD
-  title: "Neighbourhood Dashboard",
-  description:
-    "Everything in your neighbourhood in one place!",
-  sideBarInfo: ["ShopName", "Pincode", "Description", "Tags"],
-  popupInfo: ["ShopName"],
-  filters: [
-=======
   title: "City Dashboard",
   description:
     "Everything in your neighbourhood in one place for the city of Bengaluru!",
@@ -20,7 +12,6 @@ const config = {
   popupInfo: ["ShopName"],
   filters: [
 
->>>>>>> 398724a325bb8126dbd5b40951a1a32612ba86f6
     {
       type: "dropdown",
       title: "Category: ",
@@ -35,10 +26,6 @@ const config = {
       title: "Sub Category: ",
       columnHeader: "SubCategory",
       listItems: [
-<<<<<<< HEAD
-        "",
-=======
->>>>>>> 398724a325bb8126dbd5b40951a1a32612ba86f6
         "Others",
         "Defence Hospitals",
         "SDH/CHC",
