@@ -7,7 +7,7 @@ const config = {
   zoom: 10,
   title: "City Dashboard",
   description:
-    "Everything in your neighbourhood in one place for the city of Bengaluru!",
+    "Everything in your neighbourhood in one place for the city of Bengaluru! See https://datastudio.google.com/u/2/reporting/2ae63abd-95d5-47ac-ae95-00c705562a6a/page/9xETC for ward level analysis",
   sideBarInfo: ["ShopName", "Description"],
   popupInfo: ["ShopName"],
   filters: [
