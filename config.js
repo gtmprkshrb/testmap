@@ -38,7 +38,8 @@ const config = {
         "Issue Reported",
         "PHCs",
         "Volunteers",
-        "AQM"
+        "AQM",
+        "Recharge Well"
       ],
     }
   ],
