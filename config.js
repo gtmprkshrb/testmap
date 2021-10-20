@@ -39,7 +39,8 @@ const config = {
         "PHCs",
         "Volunteers",
         "AQM",
-        "Recharge Well"
+        "Recharge Well",
+        "Streetlight Intensity"
       ],
     }
   ],
