@@ -40,7 +40,8 @@ const config = {
         "Volunteers",
         "AQM",
         "Recharge Well",
-        "Streetlight Intensity"
+        "Streetlight Intensity",
+        "MalariaHotspot"
       ],
     }
   ],
