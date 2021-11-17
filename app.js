@@ -475,7 +475,7 @@ map.on("load", function () {
         geojsonData = data;
         
         color2data=JSON.parse(JSON.stringify(data));
-        color2data["features"] = color2data["features"].filter((color2data)=> color2data["properties"].Category == "Environment-Civic Data");
+        color2data["features"] = color2data["features"].filter((color2data)=> color2data["properties"].Category == "Local Data");
         console.log(color2data);
 
         // color3data=JSON.parse(JSON.stringify(data));

@@ -30,7 +30,6 @@ const config = {
         "Corporators",
         "Solid Waste",
         "Citizen Services",
-        "Electricity",
         "Campaigns",
         "PHCs",
         "Volunteers",
