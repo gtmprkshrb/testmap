@@ -18,7 +18,7 @@ const config = {
       columnHeader: "Category",
       listItems: [
         "Govt Services",
-        "Environment-Civic Data"
+        "Local Data"
       ],
     },
     {
@@ -27,18 +27,14 @@ const config = {
       columnHeader: "SubCategory",
       listItems: [
         "Others",
-        "Defence Hospitals",
-        "SDH/CHC",
         "Corporators",
-        "MLA",
-        "Waste",
+        "Solid Waste",
         "Citizen Services",
         "Electricity",
         "Campaigns",
-        "Issue Reported",
         "PHCs",
         "Volunteers",
-        "AQM",
+        "Air Quality",
         "Recharge Well",
         "Streetlight Intensity",
         "MalariaHotspot"
