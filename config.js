@@ -36,7 +36,8 @@ const config = {
         "Air Quality",
         "Recharge Well",
         "Streetlight Intensity",
-        "MalariaHotspot"
+        "MalariaHotspot",
+        "Aadhar Centre"
       ],
     }
   ],
