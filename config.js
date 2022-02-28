@@ -37,7 +37,9 @@ const config = {
         "Recharge Well",
         "Streetlight Intensity",
         "MalariaHotspot",
-        "Aadhar Centre"
+        "Aadhar Centre",
+        "All-in-one",
+        "Electricity"
       ],
     }
   ],
