@@ -39,7 +39,14 @@ const config = {
         "MalariaHotspot",
         "Aadhar Centre",
         "All-in-one",
-        "Electricity"
+        "Electricity",
+        "Sanitation",
+        "Food",
+        "Parks",
+        "Drinking water",
+        "Public Transport",
+        "Police",
+        "Skilling"
       ],
     }
   ],
