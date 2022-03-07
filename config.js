@@ -26,6 +26,7 @@ const config = {
       title: "Sub Category: ",
       columnHeader: "SubCategory",
       listItems: [
+        "Issue Reported",
         "Others",
         "Corporators",
         "Solid Waste",
