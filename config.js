@@ -12,18 +12,18 @@ const config = {
   popupInfo: ["ShopName"],
   filters: [
 
+    // {
+    //   type: "dropdown",
+    //   title: "Category: ",
+    //   columnHeader: "Category",
+    //   listItems: [
+    //     "Govt Services",
+    //     "Local Data"
+    //   ],
+    // },
     {
       type: "dropdown",
-      title: "Category: ",
-      columnHeader: "Category",
-      listItems: [
-        "Govt Services",
-        "Local Data"
-      ],
-    },
-    {
-      type: "dropdown",
-      title: "Sub Category: ",
+      title: "Data: ",
       columnHeader: "SubCategory",
       listItems: [
         "Issue Reported",
