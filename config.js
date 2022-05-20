@@ -29,7 +29,7 @@ const config = {
         "Issue Reported",
         "MLA",
         "Solid Waste",
-        "PHCs",
+        "phc",
         "MalariaHotspot",
         "Parks"
       ],
