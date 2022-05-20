@@ -26,9 +26,8 @@ const config = {
       title: "Data: ",
       columnHeader: "SubCategory",
       listItems: [
-        "Issue Reported",
-        "MLA",
-        "Solid Waste",
+        "pothole",
+        "flooding",
         "phc",
         "MalariaHotspot",
         "Parks"
