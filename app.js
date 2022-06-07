@@ -469,13 +469,13 @@ map.on("load", function () {
         console.log(data);
 
         let color1data=JSON.parse(JSON.stringify(data));
-        color1data["features"] = color1data["features"].filter((color1data) => color1data["properties"].Category == "Govt Services");
+        color1data["features"] = color1data["features"].filter((color1data) => color1data["properties"].SubCategory !== "pothole");
         console.log(color1data);
 
         geojsonData = data;
         
         color2data=JSON.parse(JSON.stringify(data));
-        color2data["features"] = color2data["features"].filter((color2data)=> color2data["properties"].Category == "Local Data");
+        color2data["features"] = color2data["features"].filter((color2data)=> color2data["properties"].SubCategory == "pothole");
         console.log(color2data);
 
         // color3data=JSON.parse(JSON.stringify(data));
