@@ -8,7 +8,7 @@ const config = {
   title: "City Dashboard",
   description:
     "Everything in your neighbourhood in one place for the city of Bengaluru!",
-  sideBarInfo: ["ShopName", "Description"],
+  sideBarInfo: ["ShopName", "Address", "Description"],
   popupInfo: ["Tags"],
   filters: [
 
