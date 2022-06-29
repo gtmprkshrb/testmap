@@ -10,6 +10,7 @@ const config = {
     "Everything in your neighbourhood in one place for the city of Bengaluru!",
   sideBarInfo: ["ShopName", "Address", "Description"],
   popupInfo: ["Tags"],
+  buttonlink: ["url"],
   filters: [
 
     // {
@@ -29,8 +30,7 @@ const config = {
         "pothole",
         "flooding",
         "phc",
-        "MalariaHotspot",
-        "Parks"
+        "AirQuality"
       ],
     }
   ],
